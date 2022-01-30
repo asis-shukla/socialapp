@@ -9,12 +9,6 @@ app.get("/", (req, res) => {
   res.send("Geetings!");
 });
 
-app.get("/api/v1/:token", (req, res) => {
-  res.status(200).json({
-    param: req.params.token,
-  });
-});
-
 app.get("/api/v1/instagram", (req, res) => {
   const instaSocial = {
     username: "ashishshukla",
@@ -43,6 +37,12 @@ app.get("/api/v1/linkedin", (req, res) => {
     date: datefns.format(new Date(), "dd/MM/yyyy"),
   };
   res.status(200).json({ instaSocial });
+});
+
+app.get("/api/v1/:token", (req, res) => {
+  res.status(200).json({
+    param: req.params.token,
+  });
 });
 
 const PORT = 4000 || process.env.PORT;
