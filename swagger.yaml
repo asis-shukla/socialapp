@@ -6,8 +6,8 @@ info:
 servers:
   - url: http://localhost:4000/api/v1
     description: Main local deveopment server
-  - url: http://localhost:4000/api/v1
-    description: This is dummy server
+  - url: https://lcoashish.herokuapp.com/api/v1
+    description: This is Production server
 components:
   securitySchemes:
     BasicAuth:
