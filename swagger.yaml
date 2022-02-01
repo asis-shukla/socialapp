@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Social App
+  description: Our first app desc
+  version: 1.0.1
+servers:
+  - url: http://localhost:4000/api/v1
+    description: Main local deveopment server
+  - url: http://localhost:4000/api/v1
+    description: This is dummy server
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /instagram:
+    get:
+      summary: get the insta data with username
+      responses:
+        "200": # status code
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: number
+                  followes:
+                    type: number
+                  date:
+                    type: date
